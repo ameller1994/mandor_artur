@@ -3,27 +3,19 @@
  */
 public enum Element
 {
-    CARBON  ("C", 3.75, 0.105),
-    HYDROGEN("H", 2.50, 0.03),
-    NITROGEN("N", 3.25, 0.17),
-    OXYGEN  ("O", 2.96, 0.21),
-    SULFUR  ("S", 3.60, 0.355);
+    CARBON  ("C"),
+    HYDROGEN("H"),
+    NITROGEN("N"),
+    OXYGEN  ("O"),
+    SULFUR  ("S");
 
     /** the atomic symbol for this element */
     public String symbol;
 
-    /** rough vdW parameter sigma from OPLS */
-    public double sigma;
-    
-    /** rough vdW paramater epsilon from OPLS */
-    public double epsilon;
-
     /** Constructor. */
-    Element(String symbol, double sigma, double epsilon)
+    Element(String symbol)
     {
         this.symbol = symbol;
-        this.sigma = sigma;
-        this.epsilon = epsilon;
     }
 
     /**
@@ -53,6 +45,6 @@ public enum Element
      */
     public String toString()
     {
-        return String.format("%s (%s, sigma=%.3f, epsilon=%.3f)", name(), symbol, sigma, epsilon);
+        return String.format("%s", symbol);
     }
 }
